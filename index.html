@@ -4,8 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .box {
+        border: 1px solid black;
+        padding: 1rem;
+      }
+    </style>
   </head>
   <body>
-    <div>Hello World</div>
+    <div
+      id="body"
+      style="display: grid; grid-template-columns: repeat(3, 1fr)"
+    ></div>
+
+    <script>
+      const dataUser = [
+        {
+          nama: "Ibnu",
+          pekerjaan: "Wiraswasta",
+          umur: 25,
+        },
+        {
+          nama: "Aji",
+          pekerjaan: "Wiraswasta",
+          umur: 27,
+        },
+      ];
+
+      const body = document.getElementById("body");
+      for (const key in dataUser) {
+        const nama = dataUser[key].nama;
+        const umur = dataUser[key].umur;
+        const pekerjaan = dataUser[key].pekerjaan;
+
+        body.innerHTML += `<div class="box">${nama}</div>`;
+        body.innerHTML += `<div class="box">${umur}</div>`;
+        body.innerHTML += `<div class="box">${pekerjaan}</div>`;
+      }
+      const data = ``;
+    </script>
   </body>
 </html>
